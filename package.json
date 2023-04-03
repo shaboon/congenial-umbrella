@@ -12,5 +12,16 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaboon/congenial-umbrella.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shaboon/congenial-umbrella/issues"
+  },
+  "homepage": "https://github.com/shaboon/congenial-umbrella#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }
