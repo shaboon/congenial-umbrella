@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
 const generateSVG = require("./lib/shape");
 
-// TODO: Create an array of questions for user input
+// An array of questions for user input
 const questions = [
   "What Shape Would You Like Your Logo to Be?",
   "What Color is the Logo Shape?",
@@ -13,7 +13,7 @@ const questions = [
 
 const [shape, shapeColor, logoContent, fontColor] = questions;
 
-// TODO: Create a function to initialize app
+// Initializes the app
 function init() {
   inquirer
     .prompt([
@@ -50,7 +50,7 @@ function init() {
     ])
     .then((data) => {
       const fileName = `logo.svg`;
-      console.log(`Line 44: ${data}`);
+      // console.log(`Line 44: ${data}`);
 
       writeSVG(fileName, generateSVG(data));
     });
