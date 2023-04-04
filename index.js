@@ -1,7 +1,6 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
-const validateData = require("./lib/shape");
 const generateSVG = require("./lib/shape");
 
 // TODO: Create an array of questions for user input
@@ -24,7 +23,6 @@ function init() {
         name: "logo",
         validate: function (logo) {
           if (logo.length <= 3 && logo.length != 0) {
-            console.log(" Accepted");
             return true;
           } else {
             console.log(
@@ -63,16 +61,5 @@ function writeSVG(fileName, data) {
     err ? console.error(err) : console.log("Success!")
   );
 }
-// // TODO: Create a function to write the SVG file
-// function generateSVG(fileName, data) {
-//   console.log(`Line 980: ${data}`);
-//   const license = data.license;
-//   console.log(license);
-//   return `
-//         <svg>
-
-//         </svg>
-//       `;
-// }
 
 init();
