@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateSVG = require("./lib/shape");
+const validateData = require("./lib/shape");
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -45,7 +45,7 @@ function init() {
 
       //   fs.validateData(data);
 
-      writeSVG(fileName, generateSVG(data));
+      writeSVG(fileName, validateData(data));
     });
 }
 
