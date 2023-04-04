@@ -2,6 +2,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const validateData = require("./lib/shape");
+const generateSVG = require("./lib/shape");
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -21,6 +22,16 @@ function init() {
         type: "input",
         message: logoContent,
         name: "logo",
+        validate: function (logo) {
+          if (logo.length <= 3 && logo.length != 0) {
+            console.log(" Accepted");
+            return true;
+          } else {
+            console.log(
+              ` !! Invalid: Logo must be 1-3 Characters! You Put: "${logo}"`
+            );
+          }
+        },
       },
       {
         type: "input",
@@ -43,9 +54,7 @@ function init() {
       const fileName = `logo.svg`;
       console.log(`Line 44: ${data}`);
 
-      //   fs.validateData(data);
-
-      writeSVG(fileName, validateData(data));
+      writeSVG(fileName, generateSVG(data));
     });
 }
 
